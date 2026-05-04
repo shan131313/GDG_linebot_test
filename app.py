@@ -169,6 +169,9 @@ if __name__ == "__main__":
 import uuid
 from urllib.parse import parse_qs
 
+app = Flask(__name__)
+
+@app.route("/", methods=['POST'])
 
 # ============ 假資料庫（用 dict 模擬 Firestore）============
 class FakeDB:
@@ -800,6 +803,10 @@ def main():
         # 一般訊息
         handle_message(user_id, user_input)
 
-
+'''
 if __name__ == "__main__":
     main()
+'''
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=5000)
